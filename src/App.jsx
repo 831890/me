@@ -1,12 +1,16 @@
 import React from 'react';
-import Header from './component/Header';
-import './App.css';
+import { Reset } from 'styled-reset'
+import styled from 'styled-components';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-    </div>
+    <>
+    <Reset/>
+      <div className="App">
+        <Header style={{display:'flex'}}/>
+      </div>
+    </>
   );
 
 }
