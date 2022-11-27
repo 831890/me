@@ -8,16 +8,8 @@ function Header() {
 	const { pathname } = useLocation();
 	const [scrollActive, setScrollActive] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const Mobile = ({ children }) => {
-    const isMobile = useMediaQuery({ maxWidth: 750 });
-    return isMobile ? children : null;
-  };
-  const handleMobileMenu = () => {
-    setIsActive(!isActive);
-  };
 	function handleScroll() {
     let scrollY = window.scrollY || document.documentElement.scrollTop;
-
     setScrollActive(scrollY > 0);
   }
 	useEffect(() => {
@@ -34,7 +26,7 @@ function Header() {
 		<>		
     <HeaderLayout className={scrollActive ? 'fixed' : ''}>
 			<Inner>
-				<h1 style={{letterSpacing:'4px'}}><a href="/">김주아.</a></h1>
+				<h1 style={{letterSpacing:'4px'}}><a href="/me">김주아.</a></h1>
         <NavLayout className={isActive ? 'active' : null}>
 						<ul>
 							{NavData && NavData.map((list,i)=> {

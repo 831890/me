@@ -12,10 +12,10 @@ export default function Router() {
     // <MainLayout>
   <CommonStyle.Main>
     <Routes>
-      <Route path="/" element={<Main />} />
+      <Route path="/Me" element={<Main />} />
       <Route path="/About" element={<About />} />
       <Route path="/Skills" element={<Skills />} />
-      <Route path="/project" element={<Project />} />
+      <Route path="/Project" element={<Project />} />
       <Route path="*" element={<NotFound />}></Route>
     </Routes>
   </CommonStyle.Main>
