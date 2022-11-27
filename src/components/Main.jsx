@@ -6,9 +6,10 @@ import Project from './Project'
 export default function Main() {
 	return (
 		<>
-		<About/>
-		<Skills/>
-		<Project/>
+			김중앙이를 소개해보자
+			<About/>
+			<Skills/>
+			<Project/>
 		</>
 	)
 }

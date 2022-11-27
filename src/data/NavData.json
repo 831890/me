@@ -1,22 +1,18 @@
 [
+
   {
     "sortNum": 1,
-    "title": "HOME",
-    "path": "/"
-  },
-  {
-    "sortNum": 2,
-    "title": "ABOUT",
+    "title": "소개",
     "path": "/about"
   },
 	{
-    "sortNum": 3,
-    "title": "SKILLS",
+    "sortNum": 2,
+    "title": "기술",
     "path": "/skills"
   },
 	{
-    "sortNum": 4,
-    "title": "PROJECT",
+    "sortNum": 3,
+    "title": "프로젝트",
     "path": "/project"
   }
 ]
