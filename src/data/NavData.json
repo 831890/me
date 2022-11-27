@@ -1,0 +1,22 @@
+[
+  {
+    "sortNum": 1,
+    "title": "HOME",
+    "path": "/"
+  },
+  {
+    "sortNum": 2,
+    "title": "ABOUT",
+    "path": "/about"
+  },
+	{
+    "sortNum": 3,
+    "title": "SKILLS",
+    "path": "/skills"
+  },
+	{
+    "sortNum": 4,
+    "title": "PROJECT",
+    "path": "/project"
+  }
+]

@@ -5,28 +5,30 @@ import About from './About';
 import Project from './Project';
 import Skills from './Skills';
 import NotFound from './NotFound';
-import styled from 'styled-components';
+import CommonStyle from '../assets/style/CommonStyle';
 
 export default function Router() {
   return (
-    <MainLayout>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Skills" element={<Skills />} />
-        <Route path="/project" element={<Project />} />
-        <Route path="*" element={<NotFound />}></Route>
-      </Routes>
-    </MainLayout>
+    // <MainLayout>
+  <CommonStyle.Main>
+    <Routes>
+      <Route path="/" element={<Main />} />
+      <Route path="/About" element={<About />} />
+      <Route path="/Skills" element={<Skills />} />
+      <Route path="/project" element={<Project />} />
+      <Route path="*" element={<NotFound />}></Route>
+    </Routes>
+  </CommonStyle.Main>
+    // </MainLayout>
   );
 }
 
 
-const MainLayout = styled.main`
-  position: relative;
-  min-height: 80vh;
-  font-size: 1.6rem;
+// const MainLayout = styled.main`
+//   position: relative;
+//   min-height: 80vh;
+//   font-size: 16px;
 
-  div {
-  height:1000px;}
-`;
+//   div {
+//   height:1000px;}
+// `;

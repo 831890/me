@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import {  useLocation } from 'react-router-dom';
+import {useLocation, NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
+import NavData from '../data/NavData.json';
 
 function Header() {
-
+	const { pathname } = useLocation();
 	const [scrollActive, setScrollActive] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const Mobile = ({ children }) => {
@@ -25,6 +26,10 @@ function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   });
+
+	useEffect(() => {
+    setIsActive(false);
+  }, [pathname]);
   return (
 		<>		
     <HeaderLayout className={scrollActive ? 'fixed' : ''}>
@@ -32,14 +37,26 @@ function Header() {
 				<h1>831890</h1>
         <NavLayout className={isActive ? 'active' : null}>
 						<ul>
-						<li><a href="">home</a></li>
-						<li><a href="">about</a></li>
-						<li><a href="">project</a></li>
+							{NavData && NavData.map((list,i)=> {
+								return (
+									<li key={i}>
+										<NavLink to={{pathname: list.path}}
+										className={({ isActive }) =>
+										(isActive ? 'active' : '')
+									}>
+											{list.title}
+										</NavLink>
+									</li>
+								)
+							})}
 						</ul>
 					</NavLayout>
+
+
+					
 					<Mobile>
           <HamburgerBtn type="button" onClick={handleMobileMenu}>
-            <i>메뉴</i>
+            {/* <i>메뉴</i> */}
             <span className="ico-bar"></span>
           </HamburgerBtn>
         </Mobile>
@@ -54,7 +71,7 @@ function Header() {
 const HeaderLayout = styled.header`
   position: relative;
   width: 100%;
-  height: 7.9rem;
+  height: 80px;
   background-color: #fff;
   transition: all 0.3s;
 
@@ -65,36 +82,36 @@ const HeaderLayout = styled.header`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 20px;
     box-sizing: border-box;
   }
 
   h1 {
     flex: 0 0 auto;
     width: 25%;
-    // font-size: 3.5rem;
+    // font-size: 35px;
     // color: #ddd;
     text-transform: uppercase;
 
     img {
-      width: 5rem;
+      width: 50px;
       vertical-align: middle;
     }
 
     span {
-      font-size: 2rem;
+      font-size: 20px;
     }
   }
 
   &.fixed {
     position: fixed;
     top: 0;
-    box-shadow: 0rem 0rem 0.6rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
     z-index: 10;
   }
 
   @media ${({ theme }) => theme.device.mobile} {
-    height: 6.2rem;
+    height: 62px;
 
     .inner {
       flex-direction: column;
@@ -104,10 +121,10 @@ const HeaderLayout = styled.header`
     }
 
     h1 {
-      padding: 1rem 2rem;
+      padding: 10px 20px;
 
       img {
-        width: 3.5rem;
+        width: 35px;
       }
     }
   }
@@ -128,13 +145,13 @@ const NavLayout = styled.nav`
       a {
         display: block;
         position: relative;
-        // font-size: 1.6rem;
-        padding: 3rem 2rem;
+        // font-size: 16px;
+        padding: 30px 20px;
         font-weight: 300;
         color: #000;
 
         &.active {
-          color: #ddd;
+          color: red;
         }
       }
     }
@@ -149,13 +166,13 @@ const NavLayout = styled.nav`
     ul {
       justify-content: flex-start;
       flex-direction: column;
-      padding: 1rem 0;
+      padding: 10px 0;
 
       li {
         width: 100%;
         a {
-          padding: 1.5rem 2rem;
-          font-size: 1.3rem;
+          padding: 15px 20px;
+          font-size: 13px;
         }
       }
     }
@@ -165,40 +182,39 @@ const NavLayout = styled.nav`
     }
   }
 `;
-
 const HamburgerBtn = styled.button`
   position: absolute;
   top: 0;
-  right: 2rem;
+  right: 20px;
   bottom: 0;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 25px;
+  height: 25px;
   margin: auto;
 
   .ico-bar {
     display: block;
-    width: 2.5rem;
-    height: 0.4rem;
-    background-color: #ddd;
+    width: 25px;
+    height: 4px;
+    background-color: #000;
 
     &::before {
       content: '';
       display: block;
       position: absolute;
-      top: -0.7rem;
-      width: 2.5rem;
-      height: 0.4rem;
-      background-color: #ddd;
+      top: -7px;
+      width: 25px;
+      height: 4px;
+      background-color: #000;
     }
 
     &::after {
       content: '';
       display: block;
       position: absolute;
-      top: 0.7rem;
-      width: 2.5rem;
-      height: 0.4rem;
-      background-color: #ddd;
+      top: 7px;
+      width: 25px;
+      height: 4px;
+      background-color: #000;
     }
   }
 `;
