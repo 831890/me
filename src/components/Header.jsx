@@ -57,6 +57,7 @@ const HeaderLayout = styled.header`
   max-width:1600px;
   height: 120px;
   max-height:120px;
+  margin:0 auto;
   background-color: #fff;
   transition: all 0.3s;
 
