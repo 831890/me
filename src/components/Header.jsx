@@ -52,14 +52,16 @@ function Header() {
 }
 
 const HeaderLayout = styled.header`
-  position: relative;
+  position: fixed;
+  top:0;
   width: 100%;
-  max-width:1600px;
+  // max-width:1600px;
   height: 120px;
   max-height:120px;
-  margin:0 auto;
+  // margin:0 auto;
   background-color: #fff;
   transition: all 0.3s;
+  // opacity:0.5;
 
 
   h1 {
@@ -88,7 +90,7 @@ const Inner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // max-width: 1024px;
+  max-width: 1600px;
   width: 100%;
   height:100%;
   // max-height:120px;
