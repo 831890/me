@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import {useLocation, NavLink } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
+// import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 import NavData from '../data/NavData.json';
 
@@ -55,13 +55,14 @@ const HeaderLayout = styled.header`
   position: fixed;
   top:0;
   width: 100%;
-  // max-width:1600px;
+  // max-width:calc(100% - );
   height: 120px;
   max-height:120px;
   // margin:0 auto;
   background-color: #fff;
   transition: all 0.3s;
   // opacity:0.5;
+  z-index:10;
 
 
   h1 {
@@ -156,41 +157,41 @@ const NavLayout = styled.nav`
   //   }
   // }
 `;
-const HamburgerBtn = styled.button`
-  position: absolute;
-  top: 0;
-  right: 20px;
-  bottom: 0;
-  width: 25px;
-  height: 25px;
-  margin: auto;
+// const HamburgerBtn = styled.button`
+//   position: absolute;
+//   top: 0;
+//   right: 20px;
+//   bottom: 0;
+//   width: 25px;
+//   height: 25px;
+//   margin: auto;
 
-  .ico-bar {
-    display: block;
-    width: 25px;
-    height: 4px;
-    background-color: #000;
+//   .ico-bar {
+//     display: block;
+//     width: 25px;
+//     height: 4px;
+//     background-color: #000;
 
-    &::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: -7px;
-      width: 25px;
-      height: 4px;
-      background-color: #000;
-    }
+//     &::before {
+//       content: '';
+//       display: block;
+//       position: absolute;
+//       top: -7px;
+//       width: 25px;
+//       height: 4px;
+//       background-color: #000;
+//     }
 
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 7px;
-      width: 25px;
-      height: 4px;
-      background-color: #000;
-    }
-  }
-`;
+//     &::after {
+//       content: '';
+//       display: block;
+//       position: absolute;
+//       top: 7px;
+//       width: 25px;
+//       height: 4px;
+//       background-color: #000;
+//     }
+//   }
+// `;
 export default Header;
 

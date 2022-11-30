@@ -9,10 +9,10 @@ export default function Main() {
 		<>
 			<IntroCol>
 				<InnerCol>
-					<h2>안녕하세요. 김주아입니다.</h2>
+					<h2>안녕하세요? 김주아입니다.</h2>
 				</InnerCol>
 			</IntroCol>
-			김중앙이를 소개해보자 아 왱 ㅏㅇ난와
+			김중앙이를 소개해보자
 			<About/>
 			<Skills/>
 			<Project/>
@@ -33,5 +33,6 @@ const IntroCol = styled.div`
 	h2 {
 		font-size:2.4rem;
 		font-weight:500;
+		letter-spacing:4px;
 	}
 `
