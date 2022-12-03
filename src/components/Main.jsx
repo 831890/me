@@ -12,7 +12,6 @@ export default function Main() {
 					<h2>안녕하세요? 김주아입니다.</h2>
 				</InnerCol>
 			</IntroCol>
-			김중앙이를 소개해보자
 			<About/>
 			<Skills/>
 			<Project/>
