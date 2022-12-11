@@ -27,9 +27,9 @@ export default function Main() {
 
 
 const InnerCol = styled.div`
-	width:90%;
-	max-width: calc(100% - 48px);
-	margin:12rem auto 0;
+	// width:90%;
+	// max-width: calc(100% - 48px);
+	// margin:12rem auto 0;
 `
 
 const IntroCol = styled.div`

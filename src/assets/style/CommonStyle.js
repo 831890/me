@@ -4,7 +4,9 @@ import styled, { css } from 'styled-components';
 const MainLayout = styled.main`
   position: relative;
   min-height: 80vh;
-  font-size: 16px;
+  max-width: 90vw;
+  margin: 12rem auto 0;
+  font-size: 1.6rem;
 `;
 
 function Main({ children, ...rest }) {
