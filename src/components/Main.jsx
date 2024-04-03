@@ -12,7 +12,7 @@ export default function Main() {
       <IntroCol>
         <InnerCol>
           <div style={{ marginBottom: '70px', fontSize: '50px', color: '#46b1d4' }}>
-            아직 준비 중입니다. <br /> 빠르게 완성 후 찾아뵐게요:)
+            아직 준비 중입니다. <br /> 빠르게 완성 후 찾아뵐게요:-)
           </div>
 
           <h2>
