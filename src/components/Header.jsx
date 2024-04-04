@@ -1,75 +1,72 @@
 import { useState, useEffect } from 'react';
-import {useLocation, NavLink } from 'react-router-dom';
+import { useLocation, NavLink } from 'react-router-dom';
 // import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 import NavData from '../data/NavData.json';
 
 function Header() {
-	const { pathname } = useLocation();
-	const [scrollActive, setScrollActive] = useState(false);
+  const { pathname } = useLocation();
+  const [scrollActive, setScrollActive] = useState(false);
   const [isActive, setIsActive] = useState(false);
-	function handleScroll() {
+  function handleScroll() {
     let scrollY = window.scrollY || document.documentElement.scrollTop;
     setScrollActive(scrollY > 0);
   }
-	useEffect(() => {
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   });
 
-	useEffect(() => {
+  useEffect(() => {
     setIsActive(false);
   }, [pathname]);
   return (
-		<>		
-    <HeaderLayout className={scrollActive ? 'fixed' : ''}>
-			<Inner>
-				<h1 style={{letterSpacing:'4px'}}><a href="/me">김주아.</a></h1>
-        <NavLayout className={isActive ? 'active' : null}>
-						<ul>
-							{NavData && NavData.map((list,i)=> {
-								return (
-									<li key={i}>
-										<NavLink to={{pathname: list.path}}
-										className={({ isActive }) =>
-										(isActive ? 'active' : '')
-									}>
-											{list.title}
-										</NavLink>
-									</li>
-								)
-							})}
-						</ul>
-					</NavLayout>
-			</Inner>
-		</HeaderLayout>
-		</>
-
+    <>
+      <HeaderLayout className={scrollActive ? 'fixed' : ''}>
+        <Inner>
+          <h1 style={{ letterSpacing: '4px' }}>
+            <a href="/me">김주아.</a>
+          </h1>
+          <NavLayout className={isActive ? 'active' : null}>
+            <ul>
+              {NavData &&
+                NavData.map((list, i) => {
+                  return (
+                    <li key={i}>
+                      <NavLink to={{ pathname: list.path }} className={({ isActive }) => (isActive ? 'active' : '')}>
+                        {list.title}
+                      </NavLink>
+                    </li>
+                  );
+                })}
+            </ul>
+          </NavLayout>
+        </Inner>
+      </HeaderLayout>
+    </>
   );
-	
 }
 
 const HeaderLayout = styled.header`
   position: fixed;
-  top:0;
+  top: 0;
   width: 100%;
   // max-width:calc(100% - );
   height: 120px;
-  max-height:120px;
+  max-height: 120px;
   // margin:0 auto;
   background-color: #fff;
   transition: all 0.3s;
   // opacity:0.5;
-  z-index:10;
-
+  z-index: 10;
 
   h1 {
     flex: 0 0 auto;
     width: 25%;
     font-size: 1.6rem;
-    font-weight:500;
+    font-weight: 500;
     // color: #ddd;
     text-transform: uppercase;
   }
@@ -77,10 +74,9 @@ const HeaderLayout = styled.header`
   &.fixed {
     position: fixed;
     top: 0;
-    max-height:64px;
-    border-bottom:1px solid #e6e8ea;
+    max-height: 64px;
+    border-bottom: 1px solid #e6e8ea;
     z-index: 10;
-    
   }
 
   @media ${({ theme }) => theme.device.mobile} {
@@ -93,17 +89,15 @@ const Inner = styled.div`
   align-items: center;
   max-width: 1600px;
   width: 100%;
-  height:100%;
-  // max-height:120px;
+  height: 100%;
   margin: 0 auto;
-  padding: 0 48px;
+  padding: 0 4.8rem;
   box-sizing: border-box;
 
   @media ${({ theme }) => theme.device.mobile} {
-    padding:0 24px;
+    padding: 0 2.4rem;
   }
-
-`
+`;
 const NavLayout = styled.nav`
   flex: 0 0 auto;
   // width: 75%;
@@ -194,4 +188,3 @@ const NavLayout = styled.nav`
 //   }
 // `;
 export default Header;
-
