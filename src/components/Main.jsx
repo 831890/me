@@ -47,18 +47,3 @@ const IntroCol = styled.div`
     letter-spacing: 4px;
   }
 `;
-// const ReactRotatingText = styled.span`
-//   animation: ${BlinkingCursor} 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
-// `
-
-// const BlinkingCursor = styled.keyfram`
-// 0% {
-// 	opacity: 0;
-// }
-// 50% {
-// 	opacity: 1;
-// }
-// 100% {
-// 	opacity: 0;
-// }
-// `
